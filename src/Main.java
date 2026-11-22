@@ -19,52 +19,76 @@ void main() {
             String usrMathOp = scanner.nextLine();
 
             if (usrMathOp.equalsIgnoreCase("add") || usrMathOp.equals("+")) {
-                System.out.println("Enter first number: ");
-                float firstNum = Float.valueOf(scanner.nextLine());
-                System.out.println("Enter second number: ");
-                float secondNum = Float.valueOf(scanner.nextLine());
-
-                float sum = firstNum + secondNum;
-
-                System.out.println(firstNum + " + " + secondNum + " = " + sum);
+                addNums(scanner);
             } else if (usrMathOp.toLowerCase().equals("subtract") || usrMathOp.equals("-")) {
-                System.out.println("Enter Minuend: ");
-                float minuend = Float.valueOf(scanner.nextLine());
-                System.out.println("Enter Subtrahend: ");
-                float subtrahend = Float.valueOf(scanner.nextLine());
-
-                float difference = minuend - subtrahend;
-
-                System.out.println(minuend + " - " + subtrahend + " = " + difference);
+                subtractNums(scanner);
             } else if (usrMathOp.toLowerCase().equals("multiply") || usrMathOp.equals("*")) {
-                System.out.println("Enter first number: ");
-                float firstNum = Float.valueOf(scanner.nextLine());
-                System.out.println("Enter second number: ");
-                float secondNum = Float.valueOf(scanner.nextLine());
-
-                float product = firstNum * secondNum;
-
-                System.out.println(firstNum + " x " + secondNum + " = " + product);
+                multiplyNums(scanner);
             } else if (usrMathOp.toLowerCase().equals("divide") || usrMathOp.equals("/")) {
-                System.out.println("Enter dividend: ");
-                float dividend = Float.valueOf(scanner.nextLine());
-                System.out.println("Enter divisor: ");
-                float divisor = Float.valueOf(scanner.nextLine());
-
-                float quotient = dividend / divisor;
-
-                System.out.println(dividend + " / " + divisor + " = " + quotient);
+               divideNums(scanner);
             } else if (usrMathOp.toLowerCase().equals("count for me") || usrMathOp.equals("count")) {
-                System.out.println("Enter number to count to: ");
-                int count = Integer.valueOf(scanner.nextLine());
-                System.out.println("Counting to " + count + ": ");
-
-                for (int i = 0; i < count + 1; i++) {
-                    System.out.println(i);
-                }
+                count(scanner);
             }
         } else {
             break;
         }
+    }
+}
+
+void addNums(Scanner scanner) {
+    System.out.println("Enter first number: ");
+    float firstNum = Float.valueOf(scanner.nextLine());
+    System.out.println("Enter second number: ");
+    float secondNum = Float.valueOf(scanner.nextLine());
+
+    float sum = sum(firstNum, secondNum);
+
+    System.out.println(firstNum + " + " + secondNum + " = " + sum);
+}
+
+float sum(float firstNum, float secondNum) {
+    return firstNum + secondNum;
+}
+
+void  multiplyNums(Scanner scanner) {
+    System.out.println("Enter first number: ");
+    float firstNum = Float.valueOf(scanner.nextLine());
+    System.out.println("Enter second number: ");
+    float secondNum = Float.valueOf(scanner.nextLine());
+
+    float product = firstNum * secondNum;
+
+    System.out.println(firstNum + " x " + secondNum + " = " + product);
+}
+
+void divideNums(Scanner scanner) {
+    System.out.println("Enter dividend: ");
+    float dividend = Float.valueOf(scanner.nextLine());
+    System.out.println("Enter divisor: ");
+    float divisor = Float.valueOf(scanner.nextLine());
+
+    float quotient = dividend / divisor;
+
+    System.out.println(dividend + " / " + divisor + " = " + quotient);
+}
+
+void subtractNums(Scanner scanner) {
+    System.out.println("Enter Minuend: ");
+    float minuend = Float.valueOf(scanner.nextLine());
+    System.out.println("Enter Subtrahend: ");
+    float subtrahend = Float.valueOf(scanner.nextLine());
+
+    float difference = minuend - subtrahend;
+
+    System.out.println(minuend + " - " + subtrahend + " = " + difference);
+}
+
+void count(Scanner scanner) {
+    System.out.println("Enter number to count to: ");
+    int count = Integer.valueOf(scanner.nextLine());
+    System.out.println("Counting to " + count + ": ");
+
+    for (int i = 0; i < count + 1; i++) {
+        System.out.println(i);
     }
 }
